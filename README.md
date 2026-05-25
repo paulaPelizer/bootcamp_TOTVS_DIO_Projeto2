@@ -1,44 +1,30 @@
-# 🎓 Bootcamp TOTVS - Portfólio de Projetos de Dados
+## 📊 Projeto 2: Dashboards de Vendas Interativos (Excel 365)
 
-Este repositório foi criado para centralizar todos os projetos práticos e desafios desenvolvidos por mim durante o Bootcamp da DIO em parceria com a TOTVS. O objetivo é aplicar conceitos do mundo real de Engenharia de Dados, Ciência de Dados e Inteligência Artificial utilizando Python e ferramentas de análise.
-
----
-
-## 🛠️ Projeto 1: Pipeline ETL com Python e Pandas
-
-### 📝 Descrição do Projeto
-Este projeto simula um cenário real de inteligência de negócios, onde foi desenvolvido um pipeline de **ETL (Extract, Transform, Load)** para automatizar a criação de mensagens personalizadas de investimentos e retenção para clientes, baseando-se no saldo atual de cada um.
-
-Para contornar a indisponibilidade de APIs externas e focar na arquitetura de dados e na manipulação local, o projeto foi desenhado utilizando arquivos como fonte e destino.
-
-### 🔄 Como o Pipeline Funciona:
-1. **Extract (Extração):** Leitura de uma base bruta de clientes (`clientes.csv`) contendo informações de ID, Nome, Saldo e Tipo de Cartão, utilizando a biblioteca **Pandas**.
-2. **Transform (Transformação):** Aplicação de regras de negócio em Python para analisar o saldo de cada cliente e gerar uma mensagem personalizada de marketing direcionada (ex: recomendação de Renda Fixa, Renda Variável ou Reserva de Emergência).
-3. **Load (Carregamento):** Exportação e salvamento dos dados transformados em um novo arquivo estruturado (`clientes_com_mensagem.csv`), otimizado com codificação (`utf-8-sig`) e separadores (`;`) para abertura imediata no Microsoft Excel, sistemas de ERP ou ferramentas de BI.
-
-### 📂 Estrutura dos Arquivos do Projeto 1
-* `etl_projeto.py`: Código-fonte em Python com as três etapas do pipeline.
-* `clientes.csv`: Arquivo com os dados brutos de entrada.
-* `clientes_com_mensagem.csv`: Arquivo final gerado após o processamento do pipeline.
-
-### 🚀 Tecnologias Utilizadas
-* **Python 3**
-* **Pandas** (Manipulação e análise de dados)
+Este projeto engloba duas versões de painéis gerenciais focados em conversão de dados brutos para suporte à tomada de decisão. Ambos utilizam a arquitetura de planilhas dividida em 3 camadas: `Bases`, `Cálculos` e `Dashboard`.
 
 ---
 
-## 📊 Projeto 2: Dashboard de Vendas - Produção e Gestão de Documentos
+### 🟢 Versão A: Análise de Vendas de Assinaturas (Xbox Game Pass) - *Escopo Original do Exercício*
 
-### 📝 Descrição do Projeto
-O objetivo deste projeto foi desenvolver um dashboard gerencial no Microsoft Excel focado no setor de **BPO (Business Process Outsourcing) de Documentos e Soluções Digitais**. O painel transforma registros brutos de contratos e serviços em uma ferramenta visual interativa para apoiar a tomada de decisão da diretoria comercial.
+#### 📝 Descrição
+Análise exploratória e visual focada na receita e comportamento de assinantes do serviço **Xbox Game Pass**. O objetivo é identificar a performance de diferentes planos (Core, Standard, Ultimate), tipos de faturamento (Mensal, Trimestral, Anual) e o impacto de cupons de desconto.
 
-O cenário simula uma empresa que comercializa licenças e serviços como *Digitalização Inteligente*, *Gestão Documental em Nuvem (ECM/GED)*, *Assinaturas Digitais* e *Outsourcing de Impressão*.
+#### 🔄 Estrutura da Planilha
+* **`Bases`:** Contém dados detalhados como `Subscriber ID`, `Name`, `Plan`, `Start Date`, `Subscription Type` e agregadores (`EA Play Season Pass`, `Minecraft Season Pass` e cupons).
+* **`Cálculos`:** Consolidação técnica respondendo a dores de negócio, como faturamento de planos anuais segmentado por auto-renovação e totalização de receitas agregadas de passes de temporada.
+* **`Dashboard`:** Interface em Dark Mode utilizando a identidade visual da marca (paleta com tons `#9BC848` e `#22C55E`), equipada com gráficos dinâmicos para monitorar as receitas agregadas.
 
-### 🔄 Estrutura do Arquivo Excel
-O projeto foi estruturado seguindo as melhores práticas de design e arquitetura de planilhas, dividido em 3 camadas:
-1. **`Bases`:** Armazenamento dos dados brutos e históricos de vendas mapeados por mês de vigência por extenso (Janeiro, Fevereiro e Março).
-2. **`Cálculos`:** Área de inteligência técnica onde foram aplicadas **Tabelas Dinâmicas** e matrizes de apoio para consolidar faturamentos, volumes e a métrica de **Ticket Médio**.
-3. **`Dashboard`:** Interface gráfica voltada para o usuário final com KPIs de faturamento e ticket médio, integrada a **Segmentações de Dados (Filtros Visuais)** conectados diretamente às Tabelas Dinâmicas, permitindo análises cruzadas em tempo real.
+---
 
-### ⚙️ Script de Automação da Base (Python)
-Para simular a extração e carga inicial de dados (ETL) no Excel de forma automatizada, foi desenvolvido o script abaixo que popula e gera o arquivo `.xlsx` estruturado com as abas separadas.
+### 🔵 Versão B: Gestão e BPO de Documentos - *Extensão de Portfólio (Cenário de Produção)*
+
+#### 📝 Descrição
+Uma adaptação autoral voltada para o mercado corporativo de serviços. Simula o controle comercial de uma empresa de tecnologia focada em **BPO de Documentos e Soluções Digitais** (*Digitalização Inteligente*, *Gestão Documental em Nuvem ECM/GED*, *Assinaturas Eletrônicas* e *Outsourcing de Impressão*).
+
+#### 🔄 Estrutura da Planilha
+* **`Bases`:** Histórico de contratos mapeados por volumetrias e organizados por competência mensal por extenso (Janeiro, Fevereiro e Março).
+* **`Cálculos`:** Tabelas dinâmicas configuradas para segmentar a receita total por linha de serviço e monitorar a evolução do **Ticket Médio** corporativo.
+* **`Dashboard`:** Painel executivo integrado a **Segmentações de Dados (Slicers)** conectadas diretamente às tabelas dinâmicas, permitindo filtros cruzados por *Canal de Venda* e *Segmento de Mercado*.
+
+#### ⚙️ Automação de Carga Inicial (Python)
+Para a inicialização da base desta versão, foi utilizado o seguinte script de apoio em Python para gerar o arquivo estruturado:
